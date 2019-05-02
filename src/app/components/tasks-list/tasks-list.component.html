@@ -1,0 +1,18 @@
+<div class="tasks-list">
+
+  <mat-card>
+    <div class="title">
+      <h2>{{tasksList.title}}</h2>
+      <img src="../../../assets/images/edit.svg" alt="edit tasks list" (click)="openDialog()">
+    </div>
+
+    <mat-checkbox *ngFor="let task of tasksList.tasks; let i = index" (change)="checkTask($event.checked, i)"
+                  [ngClass]="task.isDone ? 'checkedTask' : 'uncheckedTask'">
+      {{task.text}}
+    </mat-checkbox>
+
+    <img class="removeTasksListIcon" src="../../../assets/images/remove.svg" alt="remove tasks list"
+         (click)="removeTasksList()">
+  </mat-card>
+
+</div>

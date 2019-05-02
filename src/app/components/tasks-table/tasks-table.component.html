@@ -1,0 +1,19 @@
+<div class="tasks-table">
+
+  <mat-card (click)="isCreateTasksListShowed = true">Create a list...</mat-card>
+
+  <app-create-tasks-list
+    *ngIf="isCreateTasksListShowed"
+    [id]="tasksListIdCounter"
+    (tasksListCreated)="onTasksListCreated($event)">
+  </app-create-tasks-list>
+
+  <div class="tasks">
+    <app-tasks-list
+      *ngFor="let taskList of tasksLists" [tasksList]="taskList"
+      (tasksListRemoved)="onTasksListRemoved($event)"
+      (tasksListUpdated)="onTasksListUpdated($event)">
+    </app-tasks-list>
+  </div>
+
+</div>

@@ -1,0 +1,31 @@
+.create-tasks-list {
+  margin-top: -75px;
+  max-width: 585px;
+  margin-left: auto;
+  margin-right: auto;
+
+  form {
+
+    .task {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      #cross {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .addTaskButton {
+      margin-left: 35%;
+    }
+
+  }
+}

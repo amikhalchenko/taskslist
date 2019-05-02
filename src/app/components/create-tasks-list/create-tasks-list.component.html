@@ -1,0 +1,30 @@
+<div class="create-tasks-list">
+
+  <mat-card>
+
+    <form [formGroup]="tasksForm">
+
+      <mat-form-field>
+        <input matInput placeholder="Enter title" autofocus="autofocus" formControlName="title">
+      </mat-form-field>
+
+      <div formArrayName="tasks">
+
+        <div class="task" *ngFor="let task of formTasks.controls; let i = index" [formGroupName]="i.toString()">
+          <img src="../../../assets/images/add.svg" alt="add task">
+          <mat-form-field>
+            <input matInput placeholder="New task" formControlName="text">
+          </mat-form-field>
+          <img id="cross" src="../../../assets/images/cancel.svg" alt="cancel" (click)="deleteTask(i)">
+        </div>
+        <button class="addTaskButton" mat-flat-button color="accent" (click)="addTask()">Add task</button>
+
+      </div>
+
+      <button mat-flat-button color="primary" (click)="createTasksList()">OK</button>
+
+    </form>
+
+  </mat-card>
+
+</div>
